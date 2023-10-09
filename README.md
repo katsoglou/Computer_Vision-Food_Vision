@@ -3,7 +3,8 @@ A Python project powered by TensorFlow for food recognition using computer visio
 
 # Food Vision with Python and TensorFlow
 
-This project is a demonstration of food recognition using computer vision techniques. It's implemented in Python, making use of the powerful TensorFlow library.
+This project is a demonstration of food recognition using computer vision techniques. It's implemented in Python, making use of the powerful TensorFlow library. 
+Dataset: food101
 
 ## Introduction
 
