@@ -31,11 +31,6 @@ Provide instructions on how to use your project. Include code examples or usage 
 
 ```python
 # Example code snippet
-from food_recognition import recognize_food
-
-image_path = "path_to_food_image.jpg"
-result = recognize_food(image_path)
-print(f"Detected food: {result}") 
 ```
 
 ### License
