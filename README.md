@@ -27,12 +27,32 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-Provide instructions on how to use your project. Include code examples or usage scenarios to help others understand how to apply your food recognition system.
-
+from the file download the food_vision_model.h5. it is already trained with 75% accuracy
+Load the model: food_vision_model.h5
 ```python
-# Example code snippet
+model = tf.keras.models.load_model("food_vision_model.h5")
 ```
-
+make a folder with the food images you want to predict and then make a list with the images paths
+```python
+my_food_images = ["my_images/" + img_path for img_path in os.listdir("my_images")]
+```
+Load the classes
+```python
+with open("class_names.json", "r") as file:
+    class_names = json.load(file)
+```
+At the end make predictions
+```python
+for img in my_food_images:
+    img = load_and_prep_image(img, scale=False)  # Load in target image and turn it to tensor
+    pred_prop = model.predict(tf.expand_dims(img, axis=0)) # make prediction on image with shape [None, 224, 224, 3]
+    pred_class = class_names[pred_prop.argmax()] # find the predicted class label
+    # Plot the images with appropriate annotations
+    plt.figure()
+    plt.imshow(img/255.)  # imshow() requires float inputs to be normalized
+    plt.title(f"pred: {pred_class}, prob: {pred_prop.max():.2f}")
+    plt.axis(False)
+```
 ### License
 This project is licensed under the [MIT License](https://chat.openai.com/c/LICENSE).
 
