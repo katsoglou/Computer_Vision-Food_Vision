@@ -42,7 +42,7 @@ Load the classes
 with open("class_names.json", "r") as file:
     class_names = json.load(file)
 ```
-At the end make predictions
+Make predictions
 ```python
 for img in my_food_images:
     img = load_and_prep_image(img, scale=False)  # Load in target image and turn it to tensor
