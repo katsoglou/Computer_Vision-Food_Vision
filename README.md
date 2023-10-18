@@ -28,11 +28,12 @@ To run this project locally, follow these steps:
 ## Usage
 
 from the file download the food_vision_model.h5. it is already trained with 75% accuracy
+
 Load the model: food_vision_model.h5
 ```python
 model = tf.keras.models.load_model("food_vision_model.h5")
 ```
-make a folder with the food images you want to predict and then make a list with the images paths
+Make a folder with the food images you want to predict and then make a list with the images paths
 ```python
 my_food_images = ["my_images/" + img_path for img_path in os.listdir("my_images")]
 ```
